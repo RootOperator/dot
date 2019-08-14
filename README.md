@@ -1,2 +1,4 @@
 # shell-config-files
-bashrc and zshrc files
+
+
+just serveral config files for different shell enviorments and terminal applications
