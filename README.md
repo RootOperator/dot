@@ -1,4 +1,3 @@
-# shell-config-files
+# dot
 
-
-just serveral config files for different shell enviorments and terminal applications
+my dotfiles
