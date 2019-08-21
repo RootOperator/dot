@@ -20,9 +20,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset 'Master' 1+ -q
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset 'Master' 1- -q
+bindsym XF86AudioMute exec --no-startup-id amixer sset 'Master' toggle -q
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -159,11 +159,32 @@ bar {
 
 #custom config
 
+gaps inner 5
+gaps outer 5
+
+#enable gaps when workspace has 1 or more containers
+smart_gaps on
+
+#gaps
+
+#increase inner gaps 
+bindsym $mod+Shift+period gaps inner current plus 5
+#decrease inner gaps
+bindsym $mod+Shift+comma gaps inner current minus 5
+
+#increase outer gaps
+bindsym $mod+period gaps outer current plus 5
+#decrease outer gaps
+bindsym $mod+comma gaps outer current minus 5
+
+
+
+
 #lock system
 bindsym $mod+l exec betterlockscreen -l dim
 
-#remove anoying top title bar
-new_window 1pixel
+#remove anoying top title bar and borders
+for_window [class=".*"] border pixel 0
 
 #open firefox
 bindsym $mod+w exec firefox
