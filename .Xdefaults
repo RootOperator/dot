@@ -1,5 +1,5 @@
 !! Transparency (0-1)
-st.alpha: 0.92
+st.alpha: 0.6
 
 !! Set a default font and font size as below:
 st.font: Monospace-11;
@@ -11,6 +11,11 @@ st.font: Monospace-11;
 *.background: #282828
 *.foreground: white
 *.cursorColor: white
+
+! blue
+*.color4:       #0078d1
+*.color12:      #008dff
+
 
 /* !! gruvbox: */
 /* *.color0: #1d2021 */
