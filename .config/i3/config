@@ -202,3 +202,7 @@ bindsym $mod+w exec firefox
 #open private window in firefox
 bindsym $mod+Shift+w exec firefox --private-window
 
+
+#open vim 
+bindsym $mod+Shift+v exec st vim
+
