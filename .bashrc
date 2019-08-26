@@ -108,11 +108,15 @@ fi
 
 unset use_color safe_term match_lhs sh
 
+alias co="git checkout"
 alias xclip="xclip -se c"                 # copy to clipboard instead of middle mouse
 alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias more=less
+
+
+
 
 xhost +local:root > /dev/null 2>&1
 
