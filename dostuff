@@ -1,7 +1,7 @@
 LINE=""
 
 if [ $1 ]; then
-    LINE=$1
+    LINE=$@
 else
     LINE="more stuff"
 fi
