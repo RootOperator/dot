@@ -154,7 +154,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position bottom
 }
+
 
 
 #custom config
@@ -180,7 +182,6 @@ bindsym $mod+Shift+comma gaps inner current minus 5
 bindsym $mod+period gaps outer current plus 5
 #decrease outer gaps
 bindsym $mod+comma gaps outer current minus 5
-
 
 
 #make selected screenshot and copy to clipboard
