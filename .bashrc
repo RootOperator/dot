@@ -108,6 +108,7 @@ fi
 
 unset use_color safe_term match_lhs sh
 
+alias cat="bat"                           # better looking version on cat
 alias weather="curl 'https://wttr.in?Q'"  # grab nice terminal weather forecast
 alias co="git checkout"                   # git checkout
 alias xclip="xclip -se c"                 # copy to clipboard instead of middle mouse
