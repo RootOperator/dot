@@ -108,13 +108,14 @@ fi
 
 unset use_color safe_term match_lhs sh
 
-alias cat="bat"                           # better looking version on cat
-alias weather="curl 'https://wttr.in?Q'"  # grab nice terminal weather forecast
-alias co="git checkout"                   # git checkout
-alias xclip="xclip -se c"                 # copy to clipboard instead of middle mouse
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
+alias cat="bat"                                     # better looking version on cat
+alias weather="curl 'https://wttr.in?Q'"            # grab nice terminal weather forecast
+alias weathergraph="curl 'https://v2.wttr.in?Q'"    # terminal weather forecat graph
+alias co="git checkout"                             # git checkout
+alias xclip="xclip -se c"                           # copy to clipboard instead of middle mouse
+alias cp="cp -i"                                    # confirm before overwriting something
+alias df='df -h'                                    # human-readable sizes
+alias free='free -m'                                # show sizes in MB
 alias more=less
 
 xhost +local:root > /dev/null 2>&1
