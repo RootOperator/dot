@@ -48,7 +48,6 @@ signal=10
 
 
 [battery]
-label=BAT
 label=⚡
 #instance=1
 interval=30
