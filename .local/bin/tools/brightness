@@ -1,0 +1,40 @@
+#!/bin/bash
+
+brightness="$(/usr/bin/cat /sys/class/backlight/acpi_video0/brightness)"
+max_brightness="$(/usr/bin/cat /sys/class/backlight/acpi_video0/max_brightness)"
+
+
+dec() 
+{
+    new="$(expr $brightness - $n)"
+
+    if [ $new -lt 0 ]; then
+        new=0
+    fi  
+
+    echo $new
+}
+
+inc()
+{
+    new="$(expr $brightness + $n)"
+    if [ $new -gt $max_brightness ]; then
+        new=$max_brightness
+    fi
+
+    echo $new
+}
+
+if [ $2 ]; then
+    n=$2
+else
+    n=3
+fi
+
+if [ $1 ]; then
+    case $1 in
+        "-dec")   $(echo $(dec) > /sys/class/backlight/acpi_video0/brightness) ;;
+        "-inc")   $(echo $(inc) > /sys/class/backlight/acpi_video0/brightness) ;;
+        *)        echo "'$1' is not an option"                                 ;;
+    esac
+fi
