@@ -4,25 +4,28 @@ brightness="$(/usr/bin/cat /sys/class/backlight/acpi_video0/brightness)"
 max_brightness="$(/usr/bin/cat /sys/class/backlight/acpi_video0/max_brightness)"
 
 
-dec() 
+b() 
 {
-    new="$(expr $brightness - $n)"
+    if [ "$1" = "-dec" ]; then
+        new="$(expr $brightness - $n)"
+    elif [ "$1" = "-inc" ]; then
+        new="$(expr $brightness + $n)"
+    else
+        return 1
+    fi
 
     if [ $new -lt 0 ]; then
         new=0
-    fi  
+    elif [ $new -gt 24 ]; then
+        new=24
+    fi 
 
-    echo $new
-}
+    $(echo $new > /sys/class/backlight/acpi_video0/brightness)
+    
+    if [ $? = 0 ]; then
+        echo "brightness set to $new"
+    fi 
 
-inc()
-{
-    new="$(expr $brightness + $n)"
-    if [ $new -gt $max_brightness ]; then
-        new=$max_brightness
-    fi
-
-    echo $new
 }
 
 if [ $2 ]; then
@@ -32,9 +35,12 @@ else
 fi
 
 if [ $1 ]; then
-    case $1 in
-        "-dec")   $(echo $(dec) > /sys/class/backlight/acpi_video0/brightness) ;;
-        "-inc")   $(echo $(inc) > /sys/class/backlight/acpi_video0/brightness) ;;
-        *)        echo "'$1' is not an option"                                 ;;
-    esac
+    if [ "$USER" = "root" ]; then
+        echo $(b $@)
+    else
+        echo "run as root"
+    fi
+
+else
+    echo "brightness takes an argument"
 fi
