@@ -3,21 +3,28 @@
 brightness="$(/usr/bin/cat /sys/class/backlight/acpi_video0/brightness)"
 max_brightness="$(/usr/bin/cat /sys/class/backlight/acpi_video0/max_brightness)"
 
-
 b() 
 {
     if [ "$1" = "-dec" ]; then
         new="$(expr $brightness - $n)"
     elif [ "$1" = "-inc" ]; then
         new="$(expr $brightness + $n)"
+    elif [ "$1" = "-set" ]; then
+        if [ $2 ]; then
+            new=$2
+        else
+            echo "set takes a number as an argument 0/$max_brightness"
+            return 1 
+        fi
     else
         return 1
     fi
 
+
     if [ $new -lt 0 ]; then
         new=0
-    elif [ $new -gt 24 ]; then
-        new=24
+    elif [ $new -gt $max_brightness ]; then
+        new=$max_brightness
     fi 
 
     $(echo $new > /sys/class/backlight/acpi_video0/brightness)
