@@ -1,0 +1,22 @@
+#!/bin/bash
+
+sub=''
+
+if [ $1 ]; then
+    if [ $1 = 'graph' ]; then
+        sub=v2.
+
+        if [ $2 ]; then
+            params=$2
+        else
+            params=''
+        fi
+    else
+        params=$1
+    fi
+else
+    params=''
+fi
+
+curl $sub\wttr.in/$params
+
