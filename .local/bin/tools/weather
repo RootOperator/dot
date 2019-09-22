@@ -18,5 +18,5 @@ else
     params=''
 fi
 
-curl $sub\wttr.in/$params
+curl $sub\wttr.in/$params?Q
 
