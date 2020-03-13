@@ -1,5 +1,6 @@
 set encoding=UTF-8
 set number
+set relativenumber
 set showbreak=+++
 set hlsearch
 set smartcase
