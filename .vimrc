@@ -1,3 +1,4 @@
+set encoding=UTF-8
 set number
 set showbreak=+++
 set hlsearch
@@ -21,6 +22,9 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'preservim/nerdtree'
 Plug 'flazz/vim-colorschemes'
+Plug 'docunext/closetag.vim'
+Plug 'townk/vim-autoclose'
+Plug 'ryanoasis/vim-devicons' " needs a nerd font to work example 3270 Condensed
 call plug#end()
 
 
