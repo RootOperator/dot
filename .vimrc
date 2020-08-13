@@ -34,8 +34,9 @@ map <C-n> :NERDTreeToggle<CR> # toggle nerd tree with control n
 set background=dark
 color Atelier_SulphurpoolDark
 
-autocmd vimenter * NERDTree | wincmd l
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd InsertEnter,InsertLeave * set cul! "sets cursorline when entering Insert mode
+autocmd vimenter * NERDTree | wincmd l "automatically open NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "close vim if NERDTree is the only open window
 
 "molokai
 "gruvbox dark
