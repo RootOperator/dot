@@ -2,6 +2,9 @@
 # ~/.bashrc
 #
 
+echo -e "\e[5 q" #sets cursor shape check cursors for help
+clear
+
 [[ $- != *i* ]] && return
 
 colors() {
@@ -29,6 +32,17 @@ colors() {
 		done
 		echo; echo
 	done
+}
+
+
+cursors() {
+    echo "\"\e[0 q\" -> blinking block."
+    echo "\"\e[1 q\" -> blinking block."
+    echo "\"\e[2 q\" -> steady block."
+    echo "\"\e[3 q\" -> blinking underline."
+    echo "\"\e[4 q\" -> steady underline."
+    echo "\"\e[5 q\" -> blinking line. (xterm)"
+    echo "\"\e[6 q\" -> steady line. (xterm)"
 }
 
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
