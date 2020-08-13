@@ -15,7 +15,7 @@ set undolevels=1000
 set backspace=indent,eol,start
 
 syntax on
-
+let mapleader = '\'
 
 
 call plug#begin()
@@ -24,14 +24,15 @@ Plug 'preservim/nerdtree'
 Plug 'flazz/vim-colorschemes'
 Plug 'docunext/closetag.vim'
 Plug 'townk/vim-autoclose'
-Plug 'ryanoasis/vim-devicons' " needs a nerd font to work example 3270 Condensed
+Plug 'preservim/nerdcommenter'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'ryanoasis/vim-devicons' " needs a nerd font to work example 3270 Condensed
 call plug#end()
 
+map <C-n> :NERDTreeToggle<CR> # toggle nerd tree with control n
 
-color molokai " gruvbox does not show correct colors without having set a color first
-
-map <C-n> :NERDTreeToggle<CR> # toggle nerd tree with ctrl n
-color gruvbox
+set background=dark
+color Atelier_SulphurpoolDark
 
 autocmd vimenter * NERDTree | wincmd l
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -39,5 +40,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "codedark
 "molokai
 "colorsbox-material
-"gruvbox
+"gruvbox dark
 "madeofcode
+"afterglow
+"Atelier_SulphurpoolDark
+"adventurous dark
+"PaperColor dark
