@@ -37,12 +37,10 @@ color Atelier_SulphurpoolDark
 autocmd vimenter * NERDTree | wincmd l
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-"codedark
 "molokai
-"colorsbox-material
 "gruvbox dark
-"madeofcode
 "afterglow
+"Atelier_EstuaryDark
+"Atelier_SavannaDark
 "Atelier_SulphurpoolDark
-"adventurous dark
 "PaperColor dark
