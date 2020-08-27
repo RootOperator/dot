@@ -26,6 +26,7 @@ Plug 'docunext/closetag.vim'
 Plug 'townk/vim-autoclose'
 Plug 'preservim/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'vim-scripts/ZoomWin'
 "Plug 'ryanoasis/vim-devicons' " needs a nerd font to work example 3270 Condensed
 call plug#end()
 
