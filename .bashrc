@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-echo -e "\e[5 q" #sets cursor shape check cursors for help
+echo -e "\e[3 q" #sets cursor shape check cursors for help
 clear
 
 [[ $- != *i* ]] && return
@@ -93,10 +93,10 @@ if ${use_color} ; then
 
 	if [[ ${EUID} == 0 ]] ; then
                 PS1='\[$(tput bold)\]'
-                PS1+='\[$(tput setaf 2)\][\h\[$(tput setaf 15)\] '
-                PS1+='\W\[$(tput setaf 2)\]'
+                PS1+='\[$(tput setaf 1)\][\u\[$(tput setaf 15)\] '
+                PS1+='\W\[$(tput setaf 1)\]'
                 PS1+=']\[$(tput setaf 3)\]'
-                PS1+='$(parse_git_branch)\[$(tput setaf 2)\]'
+                PS1+='$(parse_git_branch)\[$(tput setaf 1)\]'
                 PS1+='\$\[$(tput sgr0)\] '
 	else
                 PS1='\[$(tput bold)\]'
