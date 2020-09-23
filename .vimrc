@@ -27,12 +27,15 @@ Plug 'townk/vim-autoclose'
 Plug 'preservim/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-scripts/ZoomWin'
+Plug 'cespare/vim-toml'
+Plug 'tpope/vim-fugitive'
 "Plug 'ryanoasis/vim-devicons' " needs a nerd font to work example 3270 Condensed
 call plug#end()
 
 map <C-n> :NERDTreeToggle<CR>
 map <C-t> :vert term<CR>
-map ZW :w<CR>
+nnoremap <C-e> 5<C-e>
+nnoremap <C-y> 5<C-y>
 map ZX :noh<CR>
 map ZT :tab term<CR>
 
@@ -44,6 +47,10 @@ autocmd FileType python imap <buffer> <F5> <esc>:w<CR>:exec '!python3' shellesca
 autocmd InsertEnter,InsertLeave * set cul! "sets cursorline when entering Insert mode
 autocmd vimenter * NERDTree | wincmd l "automatically open NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif "close vim if NERDTree is the only open window
+
+if $TERM =~ 'xterm-256color'
+      set noek
+endif
 
 "molokai
 "gruvbox dark
