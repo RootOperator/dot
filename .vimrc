@@ -32,10 +32,10 @@ Plug 'tpope/vim-fugitive'
 "Plug 'ryanoasis/vim-devicons' " needs a nerd font to work example 3270 Condensed
 call plug#end()
 
-map <C-n> :NERDTreeToggle<CR>
-map <C-t> :vert term<CR>
 nnoremap <C-e> 5<C-e>
 nnoremap <C-y> 5<C-y>
+map <C-n> :NERDTreeToggle<CR>
+map <C-t> :vert term<CR>
 map ZX :noh<CR>
 map ZT :tab term<CR>
 
