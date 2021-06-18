@@ -192,7 +192,7 @@ bindsym $mod+Print exec maim -B -u -s | xclip -se c -t image/png
 bindsym Print exec maim -u | xclip -se c -t image/png
 
 #lock system
-bindsym $mod+l exec betterlockscreen -l dim
+bindsym $mod+l exec betterlockscreen --lock blur
 
 #remove anoying top title bar and borders
 for_window [class=".*"] border pixel 0
