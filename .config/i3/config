@@ -22,7 +22,6 @@ exec --no-startup-id nm-applet
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -192,7 +191,7 @@ bindsym $mod+Print exec maim -B -u -s | xclip -se c -t image/png
 bindsym Print exec maim -u | xclip -se c -t image/png
 
 #lock system
-bindsym $mod+l exec betterlockscreen --lock blur
+bindsym $mod+l exec betterlockscreen -l blur
 
 #remove anoying top title bar and borders
 for_window [class=".*"] border pixel 0
