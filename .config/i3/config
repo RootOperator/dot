@@ -20,9 +20,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume "alsa_output.pci-0000_00_1b.0.analog-stereo" +5%; exec pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume "alsa_output.pci-0000_00_1b.0.analog-stereo" -5%; exec pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute "alsa_output.pci-0000_00_1b.0.analog-stereo" toggle; exec pkill -RTMIN+10 i3blocks
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

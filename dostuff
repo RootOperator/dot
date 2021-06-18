@@ -12,12 +12,12 @@ cp ~/.Xdefaults .
 cp ~/.compton.conf .
 cp ~/.vimrc .
 cp ~/.xinitrc .
-cp ~/.zshrc . 
 cp ~/.config/i3/ ./.config/ -r
 cp ~/.config/i3status/ ./.config/ -r
 cp ~/.config/i3blocks/ ./.config/ -r
 cp ~/.config/ranger/ ./.config/ -r
 cp ~/.local/bin/tools/ ./.local/bin/ -r
+cp ~/.config/polybar/ ./.config/ -r
 
 git add -A
 git commit -m "$LINE"

@@ -29,28 +29,9 @@ separator_block_width=15
 markup=none
 
 
-
-[iface]
-color=#00FF00
-interval=10
-separator=true
-
-[wifi]
-interval=10
-separator=true
-
-
-[volume]
-label=♪
-instance=Master
-interval=once
-signal=10
-
-
 [battery]
-label=⚡
-#instance=1
-interval=30
+command=~/.local/bin/tools/battery
+interval=10
 
 [time]
 command=date '+%d/%m/%y %I:%M %p'
