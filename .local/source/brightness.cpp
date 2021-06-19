@@ -54,8 +54,7 @@ int main(int arc, char *argv[]) {
             new_brightness = stoi(max_brightness);
         }
 
-        ofstream fs;
-        fs.open(dir + "/brightness");
+        ofstream fs (dir + "/brightness");
         fs << new_brightness;
         fs.close();
     } else {
