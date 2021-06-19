@@ -19,9 +19,14 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Use pactl to adjust volume in PulseAudio.
+# Use alsa to change sound volume.
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
+
+# Use custom script to change screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightness -inc
+bindsym XF86MonBrightnessDown exec --no-startup-id brightness -dec
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
