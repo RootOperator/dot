@@ -3,11 +3,7 @@
 #include <fstream>
 #include <string>
 
-template<typename T>
-void print(T message) {
-    std::cout << message << std::endl;
-}
-
+// I KNOW IT'S SCUFFED
 
 int main(int arc, char *argv[]) {
     using namespace std;
@@ -48,7 +44,7 @@ int main(int arc, char *argv[]) {
             if (arc >= 3) {
                 new_brightness = stoi(argv[2]);
             } else {
-                print("-set takes a integer between 0/" + max_brightness);
+                cout << "-set takes a integer between 0/" + max_brightness << endl;
             }
         }
 
@@ -63,7 +59,7 @@ int main(int arc, char *argv[]) {
         fs << new_brightness;
         fs.close();
     } else {
-        print("brightness takes an agument");
+        cout << "brightness takes an agument" << endl;
     }
      
     return 0;
