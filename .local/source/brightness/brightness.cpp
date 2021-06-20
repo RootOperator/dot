@@ -16,7 +16,7 @@ int read_file(string file) {
     } else {
         contents = "-1";
     }
-    
+
     fs.close();
     return stoi(contents);
 }
@@ -52,7 +52,7 @@ int main(int arc, char *argv[]) {
             new_brightness = brightness + change_value;
         }
         if (arg == "-dec") {
-            new_brightness = brightness - change_value; 
+            new_brightness = brightness - change_value;
         }
         if (arg == "-set") {
             if (arc >= 3) {
