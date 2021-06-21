@@ -8,13 +8,12 @@
 
 using namespace std;
 
-
-string get_directory(){
+string get_directory() {
     namespace fs = filesystem;
-    
+
     string new_directory = "";
     const string path = "/sys/class/backlight/";
-    
+
     for (const auto &entry: fs::directory_iterator(path)) {
         new_directory = entry.path();
         break;
@@ -24,10 +23,9 @@ string get_directory(){
         return new_directory + "/";
     } else {
         cerr << "Could not locate directory" << endl;
-        exit(1);        
+        exit(1);
     }
 }
-
 
 int read_file(string file) {
     ifstream fs (DIRECTORY + file);
