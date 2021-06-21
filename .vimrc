@@ -27,8 +27,9 @@ Plug 'preservim/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-scripts/ZoomWin'
 Plug 'cespare/vim-toml'
+Plug 'vimsence/vimsence'
 Plug 'tpope/vim-fugitive'
-Plug 'ryanoasis/vim-devicons' " needs a nerd font to work example 3270 Condensed
+Plug 'ryanoasis/vim-devicons' " needs a nerd font to work
 call plug#end()
 
 nnoremap <C-e> 5<C-e>

@@ -1,9 +1,10 @@
 #pragma once
-#include <iostream>
 
-
-/* Directory of the device */
-const std::string DIRECTORY = "/sys/class/backlight/intel_backlight/";
+/* Directory of the device 
+ *
+ * NOTE: setting DIRECTORY to "" will try to automatically
+ * search for the directory. */
+std::string DIRECTORY = "/sys/class/backlight/intel_backlight/";
 
 /* Set default value for increasing and decreasing the brightness. */
 const int DEFAULT_CHANGE = 200;
