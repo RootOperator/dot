@@ -11,7 +11,7 @@ using namespace std;
 string get_directory() {
     namespace fs = filesystem;
 
-    string new_directory = "";
+    string new_directory;
     const string path = "/sys/class/backlight/";
 
     for (const auto &entry: fs::directory_iterator(path)) {
@@ -58,7 +58,6 @@ int main(int arc, char *argv[]) {
         DIRECTORY = get_directory();
     }
 
-    int new_brightness;
     int change_value = DEFAULT_CHANGE;
     int brightness = read_file("brightness");
     int max_brightness = read_file("max_brightness");
@@ -75,28 +74,28 @@ int main(int arc, char *argv[]) {
     if (arc >= 2) {
         string arg = argv[1];
         if(arg == "-inc") {
-            new_brightness = brightness + change_value;
+            brightness += change_value;
         }
         if (arg == "-dec") {
-            new_brightness = brightness - change_value;
+            brightness -= change_value;
         }
         if (arg == "-set") {
             if (arc >= 3) {
-                new_brightness = stoi(argv[2]);
+                brightness = stoi(argv[2]);
             } else {
                 cerr << "-set expects an argument" << endl;
                 return 1;
             }
         }
 
-        if (new_brightness < MIN_THRESHOLD) {
-            new_brightness = MIN_THRESHOLD;
+        if (brightness < MIN_THRESHOLD) {
+            brightness = MIN_THRESHOLD;
         }
-        if (new_brightness > max_brightness) {
-            new_brightness = max_brightness;
+        if (brightness > max_brightness) {
+            brightness = max_brightness;
         }
 
-        update_brightness(new_brightness);
+        update_brightness(brightness);
     } else {
         cerr << "Brightness excpects an argument" << endl;
     }
